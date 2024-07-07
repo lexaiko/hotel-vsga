@@ -178,8 +178,8 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                 }
                     ?></td>
                 <td class="px-6 py-4"><?php echo $row['tanggal_pesan']; ?></td>
-                <td class="px-6 py-4"><?php echo $row['durasi_menginap']; ?>
-                <td class="px-6 py-4"><?php echo $row['total_bayar']; ?>
+                <td class="px-6 py-4"><?php echo $row['durasi_menginap']; ?> Hari</td>
+                <td class="px-6 py-4">$<?php echo $row['total_bayar']; ?></td>
             </td>
                 <td class="px-6 py-4">
                     
@@ -187,6 +187,9 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     <!-- Modal toggle -->
                     <a href="#" type="button" data-modal-target="editUserModal<?php echo $row['id']; ?>" data-modal-show="editUserModal<?php echo $row['id']; ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
         <a href="delete_dashboard.php?id=<?php echo $row['id']; ?>" class="font-medium text-red-700 ml-3">Delete</a>
+        <a href="generate_pdf.php?id=<?php echo $row['id']; ?>" class="font-medium text-green-700 ml-3" target="_blank">
+                                    <button>Cetak Laporan</button>
+                                </a>
     </div>
                 </div>
                 </td>

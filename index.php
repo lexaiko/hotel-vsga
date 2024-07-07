@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; ?>
+   <?php include 'includes/header.php'; ?>
 
 <!-- {{-- Navbar end --}}
     {{-- background top --}} -->
@@ -10,7 +10,7 @@
     <div class="herosection grid justify-center text-center mt-[100px]">
         <h1 class="text-white text-2xl xl:text-6xl lg:text-4xl md:text-2xl font-semibold mt-[150px]">Extraordinary
             natural and <br>culture charm</h1>
-        <p class="text-white mt-3 sm:text-sm">Exploring Indonesia is an unfogettable adventure.</p>
+        <p class="text-white mt-3 sm:text-sm">Exploring Banyuwangi is an unfogettable adventure.</p>
         <div class="cardgroup grid grid-rows-2 grid grid-cols-2 md:grid-cols-4 gap-8 mt-[300px]">
             <div class="cards">
                 <div
@@ -57,7 +57,7 @@
         <p class="text-gray-500 text-xl">Best Location</p>
         <div class="bungkus grid grid-cols-2 gap-4 mt-3">
             <div class="kiri col-span-1">
-                <h1 class="text-gray-800 text-4xl font-semibold">Indonesian Tourism</h1>
+                <h1 class="text-gray-800 text-4xl font-semibold">Banyuwangi Hotel</h1>
             </div>
             <div class="kanan col-span-1">
                 <p class="text-gray-500 text-xl px-8">Extraordinary natural beauty, enjoy the rich culture, and
@@ -74,14 +74,14 @@
                 <img src="img/kamar.jpg" alt="" class="w-full h-[350px] object-cover rounded-xl">
                 <div class="bungkus absolute bottom-0 left-0">
                     <p class="text-gray-300 text-xl px-8">Kolam renang</p>
-                    <p class="text-gray-100 text-xl px-8">Hotel Lorem Ipsum</p>
+                    <p class="text-gray-100 text-xl px-8">Hotel Banyuwangi Indah</p>
                 </div>
             </div>
             <div class="col-span-3 relative">
                 <img src="img/kamars.jpg" alt="" class="w-full h-[350px] object-cover rounded-xl">
                 <div class="bungkus absolute bottom-10 left-0">
                     <p class="text-gray-300 text-xl px-8">Kamar Exclusive</p>
-                    <p class="text-gray-100 text-xl px-8">Hotel Lorem Ipsum</p>
+                    <p class="text-gray-100 text-xl px-8">Hotel Banyuwangi Indah</p>
                 </div>
                 <!-- Tambahkan kolom-kolom lainnya sesuai kebutuhan -->
             </div>
@@ -91,16 +91,16 @@
             <div class="col-span-3 relative">
                 <img src="img/lampung.png" alt="" class="w-full h-[350px] object-cover rounded-xl">
                 <div class="bungkus absolute bottom-10 left-0">
-                    <p class="text-gray-300 text-xl px-8">Lampung, South Sumatera</p>
-                    <p class="text-gray-100 text-xl px-8">Sumatera Tourim</p>
+                    <p class="text-gray-300 text-xl px-8">Kamar Premium</p>
+                    <p class="text-gray-100 text-xl px-8">Hotel Banyuwangi Indah</p>
                 </div>
                 <!-- Tambahkan kolom-kolom lainnya sesuai kebutuhan -->
             </div>
             <div class="col-span-5 h-[300px] relative">
                 <img src="img/borobudur.png" alt="" class="w-full h-[350px] object-cover rounded-xl">
                 <div class="bungkus absolute bottom-0 left-0">
-                    <p class="text-gray-300 text-xl px-8">Yogyakarta, Central Java</p>
-                    <p class="text-gray-100 text-xl px-8">Borodudur Temple Tour</p>
+                    <p class="text-gray-300 text-xl px-8">Kamar Standard</p>
+                    <p class="text-gray-100 text-xl px-8">Hotel Banyuwangi Indah</p>
                 </div>
             </div>
         </div>

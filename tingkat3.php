@@ -76,7 +76,7 @@
         class="block py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
         onchange="updateHarga()">
         <option value="300">Eksklusif</option>
-        <option value="100">Standar</option>
+        <option value="100">Standard</option>
         <option value="200">Premium</option>
     </select>
 </div>
@@ -117,21 +117,6 @@
                         <div class="grid grid-cols-2">
                             <div
                                 class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 font-medium text-gray-900 dark:text-white">
-                                Termasuk Breakfast
-                            </div>
-                            <div
-                                class="px-6 py-0 border-b border-gray-200 dark:border-gray-700 font-medium text-gray-900 dark:text-white">
-                                <select id="termasuk_breakfast" name="termasuk_breakfast"
-                                    class="block py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                    onchange="updateHarga()">
-                                    <option value="80">Ya</option>
-                                    <option value="0">Tidak</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2">
-                            <div
-                                class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 font-medium text-gray-900 dark:text-white">
                                 <button type="submit"
                                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">
                                     Submit
@@ -162,10 +147,9 @@
     document.getElementById("harga").value = tipeKamar;
 
     var durasi_menginap = parseInt(document.getElementById("durasi_menginap").value);
-    var termasuk_breakfast = parseInt(document.getElementById("termasuk_breakfast").value);
     
     var harga = parseInt(document.getElementById("harga").value);
-    var total_bayar = harga * durasi_menginap + termasuk_breakfast;
+    var total_bayar = harga * durasi_menginap;
 
     // Memeriksa apakah durasi menginap lebih dari 3 hari
     if (durasi_menginap > 3) {

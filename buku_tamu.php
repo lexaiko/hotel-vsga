@@ -3,7 +3,7 @@
 
 <div class="simpan_artikel px-[200px] mt-[60px] mb-[50px] border-10 grid justify-center">
 <!-- {{-- text tour start --}} -->
-<div class="teks mt-[70px] mb-[0px] align-center inline-block" id="services">
+<!-- <div class="teks mt-[70px] mb-[0px] align-center inline-block" id="services">
         <div class="bungkus grid grid-cols-2 gap-4 mt-3">
             <div class="kiri col-span-1">
             <p class="text-gray-500 text-xl">Berti tahu kami kepuasan kami</p>
@@ -13,8 +13,8 @@
                 <p class="text-gray-500 text-lg px-8">kami selalu melakukan yang terbaik dengan keamanan dan kenyamanan agar membangun kepercayaan kepada customers</p>
             </div>
         </div>
-    </div>
-<div class="form flex justify-center mt-[40px]">
+    </div> -->
+<div class="form flex justify-center mt-[60px]">
             <div class="formkanan mr-8">
                 <form class="max-w-sm mx-auto" action="" method="POST" >
                     <div class="relative">
@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 include 'db_connection.php';
 
 // Query untuk mengambil data dari tabel buku_tamu
-$sql = "SELECT nama, phone, email, message FROM buku_tamu";
+$sql = "SELECT nama, phone, email, message FROM buku_tamu ORDER BY id DESC";
 
 // Eksekusi query
 $result = mysqli_query($koneksi, $sql);
@@ -145,4 +145,4 @@ mysqli_close($koneksi);
 </div>
 
 <?php include 'includes/footer.php'; ?>
-
+<div class="contacts" id="contacts"></div>
