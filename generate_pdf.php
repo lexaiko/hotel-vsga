@@ -36,55 +36,68 @@ class PDF extends FPDF {
     }
 
     // Improved table with three columns (No, Nama, Keterangan)
-    function ImprovedTable($info, $data)
-    {
-        // Column widths
-        $w = array(20, 70, 100); // Adjust the widths as per your requirement
-        $totalWidth = array_sum($w); // Total width of the table
+   // Improved table with three columns (No, Nama, Keterangan)
+function ImprovedTable($info, $data)
+{
+    // Column widths
+    $w = array(20, 70, 100); // Adjust the widths as per your requirement
+    $totalWidth = array_sum($w); // Total width of the table
 
-        // Calculate the X position to center the table
-        $startX = ($this->GetPageWidth() - $totalWidth) / 2;
-        
-        // Set X position for the table
-        $this->SetX($startX);
+    // Calculate the X position to center the table
+    $startX = ($this->GetPageWidth() - $totalWidth) / 2;
+    
+    // Set X position for the table
+    $this->SetX($startX);
 
-        // Header
-        $this->SetFont('Times', 'B', 12);
-        $this->Cell($w[0], 7, $info[0], 1);
-        $this->Cell($w[1], 7, $info[1], 1);
-        $this->Cell($w[2], 7, $info[2], 1); // Additional cell for Keterangan
-        $this->Ln();
-        
-        // Set X position for the table
-        $this->SetX($startX);
+    // Header
+    $this->SetFont('Times', 'B', 12);
+    $this->SetFillColor(168, 238, 255); // Set background color for header
+    $this->SetTextColor(0); // Set text color
+    $this->Cell($w[0], 7, $info[0], 1, 0, 'C', true); // No alignment
+    $this->Cell($w[1], 7, $info[1], 1, 0, 'C', true); // Nama alignment
+    $this->Cell($w[2], 7, $info[2], 1, 0, 'C', true); // Keterangan alignment
+    $this->Ln();
+    
+    // Set X position for the table
+    $this->SetX($startX);
 
-        // Data mapping
-        $mapping = array(
-            'id' => 'ID Pemesanan',
-            'nama_pemesan' => 'Nama Pemesan',
-            'jenis_kelamin' => 'Jenis Kelamin',
-            'nomor_identitas' => 'Nomor Identitas',
-            'tipe_kamar' => 'Tipe Kamar',
-            'tanggal_pesan' => 'Tanggal Pesan',
-            'durasi_menginap' => 'Durasi Menginap',
-            'total_bayar' => 'Total Bayar'
-        );
+    // Data mapping
+    $mapping = array(
+        'id' => 'ID Pemesanan',
+        'nama_pemesan' => 'Nama Pemesan',
+        'jenis_kelamin' => 'Jenis Kelamin',
+        'nomor_identitas' => 'Nomor Identitas',
+        'tipe_kamar' => 'Tipe Kamar',
+        'tanggal_pesan' => 'Tanggal Pesan',
+        'durasi_menginap' => 'Durasi Menginap',
+        'total_bayar' => 'Total Bayar'
+    );
 
-        // Data
-        $this->SetFont('Times', '', 12);
-        $no = 1; // Nomor tabel
-        foreach ($data as $key => $value) {
-            if(isset($mapping[$key])) {
-                $this->Cell($w[0], 6, $no++, 1); // Nomor tabel
-                $this->Cell($w[1], 6, $mapping[$key], 1);
-                $this->Cell($w[2], 6, $value, 1);
-                $this->Ln();
-                
-                // Set X position for the table
-                $this->SetX($startX);
+    // Data
+    $this->SetFont('Times', '', 12);
+    $no = 1; // Nomor tabel
+    foreach ($data as $key => $value) {
+        if(isset($mapping[$key])) {
+            $fillColor = ($key === 'total_bayar') ? array(0, 153, 255) : array(224, 224, 224);
+            $this->SetFillColor($fillColor[0], $fillColor[1], $fillColor[2]); // Set background color
+            
+            $this->Cell($w[0], 6, $no++, 1, 0, 'C', true); // Nomor tabel
+            $this->Cell($w[1], 6, $mapping[$key], 1, 0, 'L', true); // Mapping value
+            
+            // Check if the current key is 'total_bayar'
+            if ($key === 'total_bayar') {
+                $this->Cell($w[2], 6, $value, 1, 0, 'L', true); // Cell value with background color
+            } else {
+                $this->Cell($w[2], 6, $value, 1, 0, 'L', true); // Cell value without background color
             }
+            
+            $this->Ln();
+            
+            // Set X position for the table
+            $this->SetX($startX);
         }
     }
+}
 
     // Fancy header
     function FancyHeader($hotelName, $hotelLogo)
@@ -127,7 +140,7 @@ if ($id > 0) {
     $pdf->Ln(10);
 
     // Teks "Hormat Kami," dan "TTD,"
-    $pdf->SetFont('TImes', '', 12);
+    $pdf->SetFont('Times', '', 12);
     $pdf->Cell(0, 10, 'Hormat Kami,', 0, 1, 'R');
     $pdf->Cell(0, 0, 'Banyuwangi, ' . date('d F Y'), 0, 1, 'R');
     $pdf->Ln(10); // Spacing
