@@ -19,7 +19,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="container-fluid mx-[20px]">
     
 
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
